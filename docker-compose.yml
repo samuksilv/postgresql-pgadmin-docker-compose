@@ -1,21 +1,19 @@
-version: '3'
-
 services:
   postgres-compose:
     image: postgres
     environment:
       POSTGRES_PASSWORD: "dev"
     ports:
-      - "15432:5432"
+      - "5432:5432"
     volumes:
-      - postgres-vol:/var/lib/postgresql/data 
+      - postgres-vol:/var/lib/postgresql
     networks:
       - postgres-compose-network
       
   pgadmin-compose:
     image: dpage/pgadmin4
     environment:
-      PGADMIN_DEFAULT_EMAIL: "samuel.silv.carvalho@gmail.com"
+      PGADMIN_DEFAULT_EMAIL: "teste@gmail.com"
       PGADMIN_DEFAULT_PASSWORD: "dev"
     ports:
       - "16543:80"
